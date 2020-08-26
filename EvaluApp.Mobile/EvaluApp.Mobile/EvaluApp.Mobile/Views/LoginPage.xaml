@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EvaluApp.Mobile.Views.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:EvaluApp.Mobile.Controls"
+    xmlns:local="clr-namespace:EvaluApp.Mobile"
+    Title="{Binding Title}"
+    BackgroundColor="#FFFFFF"
+    NavigationPage.HasNavigationBar="False">
+
+
+    <!--<Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>-->
+
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand">
+
+
+
+        <Image HorizontalOptions="FillAndExpand" Source="Logo.png" />
+
+
+        <controls:StandardEntry
+            Padding="10"
+            BorderColor="Gray"
+            BorderThickness="1"
+            CornerRadius="10"
+            Keyboard="Text"
+            Opacity="50"
+            Placeholder="Usuario"
+            PlaceholderColor="Gray"
+            Text="{Binding Email}" />
+
+        <controls:StandardEntry
+            Margin="0,15"
+            Padding="10"
+            BorderColor="Gray"
+            BorderThickness="1"
+            CornerRadius="10"
+            IsPassword="True"
+            Keyboard="Text"
+            Opacity="50"
+            Placeholder="Contraseña"
+            PlaceholderColor="Gray"
+            Text="{Binding Password}" />
+
+        <ActivityIndicator IsRunning="{Binding IsRunning}" IsVisible="{Binding IsRunning}" />
+        <Button
+            Command="{Binding LoginCommand}"
+            IsEnabled="{Binding IsEnabled}"
+            Text="Inciar Sesion" />
+
+
+        <StackLayout Orientation="Horizontal">
+            <Label
+                Margin="15"
+                FontAttributes="Italic"
+                FontSize="Large"
+                HorizontalOptions="EndAndExpand"
+                Text="Solicitar Acceso"
+                TextColor="Black"
+                TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RegistrarCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label
+                Margin="15"
+                FontAttributes="Italic"
+                FontSize="Large"
+                HorizontalOptions="StartAndExpand"
+                Text="Olvido la contraseña?"
+                TextColor="Black"
+                TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RestaurarPassCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

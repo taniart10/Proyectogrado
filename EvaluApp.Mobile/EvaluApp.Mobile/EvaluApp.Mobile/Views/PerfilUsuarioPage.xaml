@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EvaluApp.Mobile.Views.PerfilUsuarioPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    Title="Perfil del usuario"
+    prism:ViewModelLocator.AutowireViewModel="True">
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="0"
+                FontSize="Medium"
+                HorizontalOptions="CenterAndExpand"
+                Text="{Binding NombreCompleto}"
+                VerticalOptions="CenterAndExpand"
+                VerticalTextAlignment="Center" />
+
+            <Frame Margin="20" Style="{StaticResource ProductoFrame}">
+
+                <StackLayout
+                    Padding="20"
+                    Orientation="Vertical"
+                    Spacing="15">
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Usuario:" VerticalOptions="CenterAndExpand" />
+                        <Label
+                            HorizontalOptions="EndAndExpand"
+                            Text="{Binding Usuario.Nombre1}"
+                            VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                    <BoxView
+                        BackgroundColor="#efefef"
+                        HeightRequest="1"
+                        HorizontalOptions="FillAndExpand" />
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Nombre:" VerticalOptions="CenterAndExpand" />
+                        <Label
+                            HorizontalOptions="EndAndExpand"
+                            Text="{Binding Usuario.Nombre2}"
+                            VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+
+
+                    <BoxView
+                        BackgroundColor="#efefef"
+                        HeightRequest="1"
+                        HorizontalOptions="FillAndExpand" />
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Apellido:" VerticalOptions="CenterAndExpand" />
+                        <Label
+                            HorizontalOptions="EndAndExpand"
+                            Text="{Binding Usuario.Apellido1}"
+                            VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                    <BoxView
+                        BackgroundColor="#efefef"
+                        HeightRequest="1"
+                        HorizontalOptions="FillAndExpand" />
+
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Cédula:" VerticalOptions="CenterAndExpand" />
+                        <Label
+                            HorizontalOptions="EndAndExpand"
+                            Text="{Binding Usuario.Cedula}"
+                            VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                    <BoxView
+                        BackgroundColor="#efefef"
+                        HeightRequest="1"
+                        HorizontalOptions="FillAndExpand" />
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Fecha Nacimiento:" VerticalOptions="CenterAndExpand" />
+                        <Label
+                            HorizontalOptions="EndAndExpand"
+                            Text="{Binding Usuario.Fechanacimiento, StringFormat='{}{0:dd-MM-yyyy}'}"
+                            VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>
